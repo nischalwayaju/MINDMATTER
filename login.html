@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.cdnfonts.com/css/medula-one" rel="stylesheet">
+    <script>
+        // Hardcoded credentials
+        const validUsername = 'test';
+        const validPassword = 'password123';
+
+        // Function to check username and password
+        function validateLogin(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            const Username = document.getElementById('Username').value;
+            const password = document.getElementById('password').value;
+            const passwordError = document.getElementById('password_error');
+
+            if (Username === validUsername && password === validPassword) {
+                // If login is successful
+                alert('Login successful!');
+                window.location.href = 'profile.html'; // Redirect to profile page
+            } else {
+                // If login fails
+                passwordError.textContent = 'Invalid Username or password.';
+            }
+        }
+    </script>
+</head>
+<body> 
+  <nav>
+    <div class="menu">
+      <div>
+        <a href="index.html"><img src="images/logo.png" alt="LOGO" class="logo"></a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </div>
+</nav>
+    
+    <div class="mainbody">
+      <div class="box"> 
+        <form method="POST" onsubmit="validateLogin(event)">
+          <div class="form">
+          
+          <h2>Log in</h2>
+          
+          <div class="inputbox">
+            <input type="text" id="Username" name="Username" required="required">
+            <span>Username </span>
+            <i></i>
+          </div>
+
+          <div class="inputbox">
+              <input type="password" name="password" id="password" required="required">
+              <span>Password</span><br>
+              <i></i>
+          </div>
+          
+          <div id="password_error" style="color: red;"></div>
+          
+          <div class="links">
+            <p>New to the Platform? </p>
+            <a href="register.html">Sign Up.</a>
+          </div>
+          
+          <input type="submit" value="Login">
+          
+          </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

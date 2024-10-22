@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: center;
+}
+
+nav {
+    background: none;
+    width: 100%;
+    z-index: 12;
+    font-family: 'Medula One', sans-serif; 
+}
+
+nav .menu {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.menu ul {
+    display: inline-flex;
+}
+
+.menu ul li {
+    list-style: none;
+    margin-right: 15px;
+}
+
+.menu ul li .active {
+    color: #f500d4;
+    text-decoration: underline;
+}
+
+.menu ul li .inactive {
+    color: #000000;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #00d011d0;
+    text-decoration: underline;
+}
+
+.mainbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px; /* Added padding for smaller screens */
+}
+
+.box {
+    margin: 3% 5%;  
+    position: relative;
+    width: 800px;
+    max-width: 100%; /* Make it responsive */
+    height: 520px;
+    background: #28292D;
+    border-radius: 8px;
+    overflow: auto;
+    padding: 20px; /* Added padding for content */
+}
+
+h2 {
+    color: #45f3ff;
+    text-align: center;
+    font-size: 35px;
+}
+
+p {
+    font-size: 25px;
+    margin: 20px;
+    color: whitesmoke;
+}
+
+.profilepic {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+form {
+    position: absolute;
+    top: 130px;
+    right: 30px;
+    flex-direction: column;
+    align-items: center;  
+    font-size: 25px;
+}
+
+input[type="file"] {
+    display: none;
+    align-self: center;
+}
+
+button[type="submit"] {
+    display: flex;
+    color: rgb(39, 236, 62);
+    background-color: #28292D;
+    height: 30px;
+    width: auto;
+    border-radius: 5px;
+    border: 2px solid white;
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.image1 {
+    height: 100px;
+    width: 100px;
+}
+
+.logout {
+    position: fixed;
+    bottom: 10px;
+    float: right;
+    right: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .box {
+        width: 90%;
+        height: auto; /* Make height auto for smaller screens */
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .profilepic {
+        width: 80px; /* Smaller profile picture */
+        height: 80px; 
+        top: 10px; /* Adjusted position */
+        right: 10px;
+    }
+
+    button[type="submit"] {
+        font-size: 20px;
+        padding: 0 8px; /* Adjusted padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .mainbody {
+        padding: 10px; /* Less padding on small screens */
+    }
+
+    .box {
+        margin: 0; /* Remove margin for small screens */
+        padding: 15px; /* Added padding for content */
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .profilepic {
+        width: 70px; /* Even smaller profile picture */
+        height: 70px; 
+        top: 5px; /* Adjusted position */
+        right: 5px;
+    }
+
+    button[type="submit"] {
+        font-size: 18px;
+        padding: 0 5px; /* Adjusted padding */
+    }
+}

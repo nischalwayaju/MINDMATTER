@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Story</title>
+    <link rel="stylesheet" href="sharestories.css">
+    <link href="https://fonts.cdnfonts.com/css/medula-one" rel="stylesheet">
+</head>
+<body> 
+    <nav>
+        <div class="menu">
+          <div>
+            <a href="index.html"><img src="images/logo.png" alt="LOGO" class="logo"></a>
+          </div>
+          <ul>
+            <li><a href="index.html" class="inactive">Home</a></li>
+            <li><a href="about.html" class="inactive">About</a></li>
+            <li><a href="blogs.html" class="inactive">Blogs</a></li>
+            <li><a href="stories.html" class="active">Stories</a></li>
+            <li><a href="login.html" class="inactive">Login</a></li>
+          </ul>
+        </div>
+    </nav>
+    <div class="mainbody">
+      <div class="box"> 
+        <form id="storyForm" onsubmit="return showPopup(event)">
+          <div class="form">
+            <h2>Share Your Story</h2>
+            <div class="inputbox">
+              <input type="text" id="name" name="name" placeholder="Your Name. Leave Blank to Share anonymously.">
+            </div>
+            <div class="inputbox">
+              <input type="text" name="title" id="title" required="required" placeholder="Title of the Story.">
+            </div>
+            <div class="inputbox">
+                <textarea name="story" id="story" required="required" placeholder="Story Description"></textarea>
+            </div>
+            <input type="submit" value="Share">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Popup message -->
+    <div id="popup" class="popup">Story shared successfully!</div>
+
+    <script>
+        function showPopup(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const popup = document.getElementById('popup');
+            popup.style.display = 'block'; // Show the popup
+
+            // Optionally, you can hide the popup after a few seconds
+            setTimeout(() => {
+                popup.style.display = 'none'; // Hide the popup after 2 seconds
+            }, 2000);
+
+            // Here, you can add code to handle the form data, like sending it to a server
+            // For example, you could use fetch() to send a POST request with the form data.
+        }
+    </script>
+</body>
+</html>
