@@ -82,7 +82,7 @@ nav .menu {
 }
 
 .mainimage {
-  height: 110%;
+  height: auto;
   width: 100%;
   max-width: 300px;
   border-radius: 10px;
